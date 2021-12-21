@@ -85,7 +85,8 @@
                         $('#submitSuccessMessage').removeClass("d-none");
                     })
                     .fail(function(data) {
-                        if(data.contains('400')) {
+                        const dataString = JSON.stringify(data);
+                        if(dataString.contains('400')) {
                             $('#errorMessage').text('Enter  valid email address');
                         } else {
                             $('#errorMessage').text('There was problem submitted your email address. Please try another time.');
