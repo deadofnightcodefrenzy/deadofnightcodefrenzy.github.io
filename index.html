@@ -41,7 +41,7 @@
                                 </div>
                             </div>
 
-                            <div class="d-none"><div class="text-center text-danger mb-3" style="color:#8e0000;" id="submitErrorMessage">We failed to submit your email address. Please try again another time.</div></div>
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3" style="color:#8e0000;" >We failed to submit your email address. Please try again another time.</div></div>
                         </form>
                     </div>
                 </div>
@@ -77,11 +77,11 @@
                         email: email
  			        })
                     .done(function(data) {
-                        console.log('success: ' + data);
+                        console.log('success: ' + JSON.stringify(data));
                         $('#submitSuccessMessage').removeClass("d-none");
                     })
                     .fail(function(data) {
-                        console.log('error: ' + data);
+                        console.log('error: ' + JSON.stringify(data));
                         $('#submitErrorMessage').removeClass("d-none");
                     });
                 });
