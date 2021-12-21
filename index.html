@@ -59,6 +59,10 @@
         <script>
             $(document).ready(function() {
                 $('#contactFormFooter').submit(function(e) {
+
+                    $('#submitErrorMessage').addClass("d-none");
+                    $('#submitSuccessMessage').addClass("d-none");
+
                     e.preventDefault();
                     var email = $('#emailAddressBelow').val();
 
@@ -81,7 +85,6 @@
                         dataType: 'text'
                     })
                     .done(function(data) {
-                        $('#submitErrorMessage').addClass("d-none");
                         $('#submitSuccessMessage').removeClass("d-none");
                     })
                     .fail(function(data) {
@@ -92,7 +95,6 @@
                             $('#errorMessage').text('There was problem submitted your email address. Please try another time.');
                         }
                         
-                        $('#submitSuccessMessage').addClass("d-none");
                         $('#submitErrorMessage').removeClass("d-none");
                     });
                 });
