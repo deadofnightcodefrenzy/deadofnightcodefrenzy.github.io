@@ -81,6 +81,7 @@
                         $('#submitSuccessMessage').removeClass("d-none");
                     })
                     .fail(function(data) {
+                        console.log('error: ' + data);
                         $('#submitErrorMessage').removeClass("d-none");
                     });
                 });
