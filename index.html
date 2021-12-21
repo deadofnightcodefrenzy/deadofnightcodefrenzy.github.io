@@ -31,11 +31,11 @@
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
-                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN"  action="mailto:peter@deadofnightcodefrenzy.com" method="get" enctype="text/plain">
+                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN"  action="https://ig8lxr4qg3.execute-api.us-west-2.amazonaws.com/production/subscribe" method="get" enctype="text/plain">
                             <!-- Email address input-->
                             <div class="row">
                                 <div class="col">
-                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="email" name="email" placeholder="Email Address" data-sb-validations="required,email" />
                                     <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">Email Address is required.</div>
                                     <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email Address Email is not valid.</div>
                                 </div>
