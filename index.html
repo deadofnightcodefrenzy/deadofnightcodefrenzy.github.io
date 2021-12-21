@@ -41,7 +41,7 @@
                                 </div>
                             </div>
 
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3" style="color:#8e0000;" >We failed to submit your email address. Please try again another time.</div></div>
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3" style="color:#8e0000;font-weight:bold;font-size:1.3em;" >We failed to submit your email address. Please try again another time.</div></div>
                         </form>
                     </div>
                 </div>
@@ -72,10 +72,11 @@
                         }
                     }
 
-                    //
-                    jQuery.post('https://ig8lxr4qg3.execute-api.us-west-2.amazonaws.com/production/subscribe', {
-                        email: email
- 			        })
+                    $.ajax({
+                        type: 'POST',
+                        url: 'https://ig8lxr4qg3.execute-api.us-west-2.amazonaws.com/production/subscribe',
+                        dataType: 'text'
+                    })
                     .done(function(data) {
                         console.log('success: ' + JSON.stringify(data));
                         $('#submitSuccessMessage').removeClass("d-none");
