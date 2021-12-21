@@ -77,11 +77,12 @@
                         email:email
  			        })
                     .done(function(data) {
-                            console.log('success: ' + data);
+                        console.log('success: ' + data);
+                        $('#submitSuccessMessage').show();
                     })
                     .fail(function(data) {
                         console.log('error: ' + JSON.stringify(data));
-                        $('#submitErrorMessage').
+                        $('#submitErrorMessage').show();
                     });
        
                 });
