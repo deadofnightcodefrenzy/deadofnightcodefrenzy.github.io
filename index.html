@@ -37,11 +37,11 @@
 
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3">
-                                    <div class="fw-bolder" style="color:#444444;font-size:1.3em;">We got your email. You'll here from us soon!</div>
+                                    <div class="fw-bolder" style="color:green;font-size:1.4em;">We got your email. You'll here from us soon!</div>
                                 </div>
                             </div>
 
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3" style="color:#8e0000;font-weight:bold;font-size:1.3em;" >We failed to submit your email address. Please try again another time.</div></div>
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3" id="errorMessage" style="color:#8e0000;font-weight:bold;font-size:1.4em;" >We failed to submit your email address. Please try again another time.</div></div>
                         </form>
                     </div>
                 </div>
@@ -87,6 +87,8 @@
                     })
                     .fail(function(data) {
                         console.log('error: ' + JSON.stringify(data));
+                        const error = JSON.parse(data);
+                        $('#errorMessage').text(error.message);
                         $('#submitSuccessMessage').addClass("d-none");
                         $('#submitErrorMessage').removeClass("d-none");
                     });
