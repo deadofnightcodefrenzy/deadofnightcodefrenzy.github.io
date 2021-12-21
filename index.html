@@ -87,7 +87,7 @@
                     .fail(function(data) {
                         const dataString = JSON.stringify(data);
                         if(dataString.includes('400')) {
-                            $('#errorMessage').text('Enter  valid email address');
+                            $('#errorMessage').text('Enter a valid email address');
                         } else {
                             $('#errorMessage').text('There was problem submitted your email address. Please try another time.');
                         }
