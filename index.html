@@ -82,10 +82,12 @@
                     })
                     .done(function(data) {
                         console.log('success: ' + JSON.stringify(data));
+                        $('#submitErrorMessage').addClass("d-none");
                         $('#submitSuccessMessage').removeClass("d-none");
                     })
                     .fail(function(data) {
                         console.log('error: ' + JSON.stringify(data));
+                        $('#submitSuccessMessage').addClass("d-none");
                         $('#submitErrorMessage').removeClass("d-none");
                     });
                 });
